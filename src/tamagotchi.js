@@ -5,9 +5,10 @@ export let tamagotchi = {
   setHunger: function() {
     const hungerInterval = setInterval(() => {
       this.foodLevel--;
-      if (this.didYouFeed() === true) {
+      if (this.didYouFeed() == true) {
         clearInterval(hungerInterval);
-        return "Tamagotchi is Hungry";
+        this.foodLevel = "Tamagotchi is DEAD!";
+        return this.foodLevel;
       } //console.log(this.foodLevel)
     }, 1000);
   },
@@ -32,7 +33,8 @@ export let tamagotchi = {
       this.sleep--;
       if (this.didYouSleep() === true) {
         clearInterval(sleepInterval);
-        return "ZZZZZZZZZ"
+        this.sleep = "ZZZZZZZZZ";
+        return this.sleep;
       }
     }, 1000);
   },
@@ -58,7 +60,8 @@ export let tamagotchi = {
       this.game--;
       if (this.didYouPlay() === true) {
         clearInterval(playInterval);
-        return "No Play!"
+        this.game = "No Play!";
+        return this.game;
       }
     }, 1000);
   },
