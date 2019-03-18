@@ -3,14 +3,15 @@ export let tamagotchi = {
   sleep: 10,
   game: 100,
   setHunger: function() {
-    const hungerInterval = setInterval (() => {
+    const hungerInterval = setInterval(() => {
       this.foodLevel--;
       if (this.didYouFeed() === true) {
         clearInterval(hungerInterval);
         return "Tamagotchi is Hungry";
-      }
+      } //console.log(this.foodLevel)
     }, 1000);
   },
+
   didYouFeed: function() {
     if (this.foodLevel > 0) {
       return false;
@@ -57,9 +58,9 @@ export let tamagotchi = {
       this.game--;
       if (this.didYouPlay() === true) {
         clearInterval(playInterval);
-        return "YAY"
+        return "No Play!"
       }
-    }, 3000);
+    }, 1000);
   },
 
   didYouPlay: function() {

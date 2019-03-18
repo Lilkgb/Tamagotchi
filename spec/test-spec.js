@@ -25,7 +25,6 @@ describe('tamagotchi', function() {
 
   it('should display game got and game level', function() {
     expect(tam.playSmall("small")).toEqual("Your Tamagotchi played small! Play level increased by 5!");
-    jasmine.clock().tick(5001);
     expect(tam.game).toEqual(15);
   })
 });
